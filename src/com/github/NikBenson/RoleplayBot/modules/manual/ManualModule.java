@@ -1,17 +1,18 @@
 package com.github.NikBenson.RoleplayBot.modules.manual;
 
 import com.github.NikBenson.RoleplayBot.commands.Command;
+import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
 import com.github.NikBenson.RoleplayBot.modules.RoleplayBotModule;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Manual implements RoleplayBotModule {
-	private static Manual instance;
+public class ManualModule implements RoleplayBotModule {
+	private static ManualModule instance;
 	private final Map<Guild, ManualManager> managers = new HashMap<>();
 
-	public Manual() {
+	public ManualModule() {
 		instance = this;
 		Command.register(new com.github.NikBenson.RoleplayBot.modules.manual.commands.Manual());
 	}
@@ -24,15 +25,21 @@ public class Manual implements RoleplayBotModule {
 	@Override
 	public void load(Guild guild) {
 		if(!managers.containsKey(guild)) {
-			managers.put(guild, new ManualManager(guild));
+			ManualManager manualManager = new ManualManager(guild);
+			ConfigurationManager configurationManager = ConfigurationManager.getInstance();
+
+			configurationManager.registerConfiguration(manualManager);
+			try {
+				configurationManager.load(manualManager);
+			} catch (Exception ignored) {}
+
+			managers.put(guild, manualManager);
 		}
 	}
 
 	@Override
 	public void unload(Guild guild) {
-		if(managers.containsKey(guild)) {
-			managers.remove(guild);
-		}
+		managers.remove(guild);
 	}
 
 	public static ManualManager getManualManager(Guild guild) {

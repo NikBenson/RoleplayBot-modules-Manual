@@ -5,7 +5,7 @@ import com.github.NikBenson.RoleplayBot.commands.context.ServerContext;
 import com.github.NikBenson.RoleplayBot.modules.manual.ManualManager;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-import static com.github.NikBenson.RoleplayBot.modules.manual.Manual.getManualManager;
+import static com.github.NikBenson.RoleplayBot.modules.manual.ManualModule.getManualManager;
 
 public class Manual extends Command<ServerContext> {
 
