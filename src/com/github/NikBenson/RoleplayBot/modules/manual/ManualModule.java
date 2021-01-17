@@ -3,6 +3,7 @@ package com.github.NikBenson.RoleplayBot.modules.manual;
 import com.github.NikBenson.RoleplayBot.commands.Command;
 import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
 import com.github.NikBenson.RoleplayBot.modules.RoleplayBotModule;
+import com.github.NikBenson.RoleplayBot.modules.manual.commands.Manual;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.util.HashMap;
@@ -14,7 +15,7 @@ public class ManualModule implements RoleplayBotModule {
 
 	public ManualModule() {
 		instance = this;
-		Command.register(new com.github.NikBenson.RoleplayBot.modules.manual.commands.Manual());
+		Command.register(new Manual());
 	}
 
 	@Override
