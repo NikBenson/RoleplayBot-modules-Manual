@@ -37,4 +37,9 @@ public class ManualManager implements JSONConfigured {
 	public void loadFromJSON(JSONObject json) {
 		manuals = json;
 	}
+
+	@Override
+	public Guild getGuild() {
+		return GUILD;
+	}
 }

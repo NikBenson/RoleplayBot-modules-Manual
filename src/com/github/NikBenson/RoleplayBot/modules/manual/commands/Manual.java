@@ -1,17 +1,17 @@
 package com.github.NikBenson.RoleplayBot.modules.manual.commands;
 
 import com.github.NikBenson.RoleplayBot.commands.Command;
-import com.github.NikBenson.RoleplayBot.commands.context.ServerContext;
+import com.github.NikBenson.RoleplayBot.commands.context.GuildMessageContext;
 import com.github.NikBenson.RoleplayBot.modules.manual.ManualManager;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import static com.github.NikBenson.RoleplayBot.modules.manual.ManualModule.getManualManager;
 
-public class Manual extends Command<ServerContext> {
+public class Manual extends Command<GuildMessageContext> {
 
 	@Override
-	public Class<ServerContext> getContext() {
-		return ServerContext.class;
+	public Class<GuildMessageContext> getContext() {
+		return GuildMessageContext.class;
 	}
 
 	@Override
@@ -20,8 +20,8 @@ public class Manual extends Command<ServerContext> {
 	}
 
 	@Override
-	public String execute(String command, ServerContext context) {
-		ManualManager manualManager = getManualManager(((MessageReceivedEvent) context.getParams().get("event")).getGuild());
+	public String execute(String command, GuildMessageContext context) {
+		ManualManager manualManager = getManualManager(((GuildMessageReceivedEvent) context.getParams().get("event")).getGuild());
 
 		if(manualManager != null) {
 			String manual;

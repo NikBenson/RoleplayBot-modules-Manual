@@ -43,6 +43,11 @@ public class ManualModule implements RoleplayBotModule {
 		managers.remove(guild);
 	}
 
+	@Override
+	public Guild[] getLoaded() {
+		return managers.keySet().toArray(new Guild[0]);
+	}
+
 	public static ManualManager getManualManager(Guild guild) {
 		return instance.managers.get(guild);
 	}
