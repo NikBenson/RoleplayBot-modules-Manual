@@ -1,9 +1,9 @@
-package com.github.NikBenson.RoleplayBot.modules.manual;
+package com.github.nikbenson.roleplaybot.modules.manual;
 
-import com.github.NikBenson.RoleplayBot.commands.Command;
-import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
-import com.github.NikBenson.RoleplayBot.modules.RoleplayBotModule;
-import com.github.NikBenson.RoleplayBot.modules.manual.commands.Manual;
+import com.github.nikbenson.roleplaybot.commands.Command;
+import com.github.nikbenson.roleplaybot.configurations.ConfigurationManager;
+import com.github.nikbenson.roleplaybot.modules.RoleplayBotModule;
+import com.github.nikbenson.roleplaybot.modules.manual.commands.Manual;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.util.HashMap;

@@ -1,11 +1,11 @@
-package com.github.NikBenson.RoleplayBot.modules.manual.commands;
+package com.github.nikbenson.roleplaybot.modules.manual.commands;
 
-import com.github.NikBenson.RoleplayBot.commands.Command;
-import com.github.NikBenson.RoleplayBot.commands.context.GuildMessageContext;
-import com.github.NikBenson.RoleplayBot.modules.manual.ManualManager;
+import com.github.nikbenson.roleplaybot.commands.Command;
+import com.github.nikbenson.roleplaybot.commands.context.GuildMessageContext;
+import com.github.nikbenson.roleplaybot.modules.manual.ManualManager;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
-import static com.github.NikBenson.RoleplayBot.modules.manual.ManualModule.getManualManager;
+import static com.github.nikbenson.roleplaybot.modules.manual.ManualModule.getManualManager;
 
 public class Manual extends Command<GuildMessageContext> {
 
